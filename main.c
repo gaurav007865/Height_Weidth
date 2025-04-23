@@ -5,7 +5,7 @@
 #define WIDTH 20
 #define HEIGHT 10
 
-int x, y; // Pac-Man's coordinates
+int x, y; 
 char map[HEIGHT][WIDTH];
 
 void drawMap() {
@@ -13,7 +13,7 @@ void drawMap() {
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
             if (i == y && j == x) {
-                printf("P"); // Draw Pac-Man
+                printf("P"); 
             } else {
                 printf("%c", map[i][j]);
             }
@@ -57,7 +57,6 @@ int main() {
         }
     }
 
-    // Create walls
     for (int i = 0; i < HEIGHT; i++) {
         map[i][0] = '#';
         map[i][WIDTH - 1] = '#';
@@ -66,12 +65,10 @@ int main() {
         map[0][j] = '#';
         map[HEIGHT - 1][j] = '#';
     }
-
-    // Main game loop
     char input;
     while (1) {
         drawMap();
-        input = _getch(); // Get keyboard input
+        input = _getch(); 
         movePacman(input);
     }
 
